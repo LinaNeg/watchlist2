@@ -2,6 +2,17 @@
   <h1><%= @list.name %></h1>
 </div>
 <div class="main-container">
-  <%= link_to "ajouter un film", "#", class: "btn btn-primary" %>
-
+  <%= link_to "ajouter un film", new_list_bookmark_path(@list), class: "btn btn-success" %>
+  <div class="movies-container">
+    <% if @movies != nil %>
+      <% @movies.each do |movie| %>
+        <div class="card-movie">
+          <img src="<%= movie.poster_url %>" alt="poster du film">
+          <h3><%= movie.title %></h3>
+          <p><%= movie.overview %></p>
+          <p><%= movie.rating %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

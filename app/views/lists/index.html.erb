@@ -1,11 +1,13 @@
 <div class="banner">
   <h1>Ma Watchlist</h1>
+  <span>Photo by <a href="https://unsplash.com/@dmjdenise?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denise Jans</a> on <a href="https://unsplash.com/s/photos/movie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </span>
 </div>
 <div class="main-container">
   <h2>Mes listes de films</h2>
   <% if @lists != nil %>
     <% @lists.each do |list| %>
-      <h4><%= list.name %></h4>
+      <h4><%= link_to list.name, list_path(list) %></h4>
     <% end %>
   <% end %>
   <%= simple_form_for(@list) do |f| %>
