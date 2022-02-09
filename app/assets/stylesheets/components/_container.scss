@@ -1,9 +1,19 @@
 .main-container {
   width: auto;
   margin: 0 50px;
+  padding: 10px;
 }
 
 .movies-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.lists-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 10px;
+}
+
+.form-container {
+  display: inline-block;
 }

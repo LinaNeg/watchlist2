@@ -11,6 +11,9 @@
           <h3><%= movie.title %></h3>
           <p><%= movie.overview %></p>
           <p><%= movie.rating %></p>
+          <% movie.bookmarks.each do |bookmark| %>
+            <p><%= bookmark.comment %>   |  <%= link_to "delete", bookmark_path(bookmark), method: :delete %></p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
